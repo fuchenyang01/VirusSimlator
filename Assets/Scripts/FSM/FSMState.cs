@@ -5,14 +5,17 @@ using UnityEngine;
 public enum Transition
 {
     NullTransition=0,
-    SeePlayer,
-    LostPlayer
+    TouchPatients,        //接触患者
+    PassIncubation,       //度过潜伏期
+    EndQuarantine         //结束隔离
 }
 public enum StateID
 {
     NullStateID=0,
-    Patrol,
-    Chase
+    Susceptible, //易感者
+    Exposed,     //暴露者
+    Infectious,  //患病者
+    Recovered    //康复者
 }
 
 
