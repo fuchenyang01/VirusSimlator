@@ -1,13 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.AI;
 public class NPC : MonoBehaviour {
-
+    public GameObject plane;
+  
+    private NavMeshAgent agent;
     private FSMSystem fsm;
-
-	// Use this for initialization
-	void Start () {
+    private Vector3 destination;
+    private float initSpeed;
+    // Use this for initialization
+    void Start () {
+        agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
+        initSpeed = agent.speed;
+        destination = GenerateRandomPosition(plane.transform.localScale.x, plane.transform.localScale.z) + plane.transform.position;
+        agent.SetDestination(destination);
         InitFSM();
 	}
 
@@ -34,6 +41,45 @@ public class NPC : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+       
         fsm.Update(this.gameObject);
 	}
+    public void RandomMove()
+    {
+        if (Vector3.Distance(this.transform.position, destination) < 0.3f)
+        {
+            agent.speed = initSpeed;
+            destination = GenerateRandomPosition(plane.transform.localScale.x, plane.transform.localScale.z) + plane.transform.position;
+            agent.SetDestination(destination);
+
+        }
+    }
+    Vector3 GenerateRandomPosition(float xScale, float zScale)
+    {
+        float x = Random.Range(-xScale * 5f, xScale * 5f);
+        float z = Random.Range(-zScale * 5f, zScale * 5f);
+
+        return new Vector3(x, 0, z);
+    }
+
+    private void OnTriggerEnter(Collider collider)
+    {
+
+        if (collider.tag == "NPC" && NPCSpawn.day > 0) 
+        {
+            if (infectState == 2)
+            {//如果是传染源
+                float rand = Random.Range(0, 1000);
+                if (rand / 1000 < NPCSpawn.staticIinfecRate)
+                    collider.gameObject.SendMessage("inf");
+            }
+            if (infectState == 1)
+            {//如果是传染源
+                float rand = Random.Range(0, 1000);
+                if (rand / 1000 < NPCSpawn.staticEinfectRate)
+                    collider.gameObject.SendMessage("inf");
+            }
+
+        }
+    }
 }

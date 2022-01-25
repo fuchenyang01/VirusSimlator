@@ -13,13 +13,14 @@ public class SusceptibleState : FSMState
 
     public override void Act(GameObject npc)
     {
-       //随机移动
+        //随机移动
+        npc.GetComponent<NPC>().RandomMove();
     }
 
     public override void Reason(GameObject npc)
     {
         //接触患者
-        if (true)
+        if (false)
         {
             fsm.PerformTransition(Transition.TouchPatients);
         }      
