@@ -24,7 +24,11 @@ public class LevelManager : MonoBehaviour
             LoadMenu();
         }
     }
-
+    public void LoadScene(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
+        uiManager.menuWnd.SetWindSate(false);
+    }
     public void LoadMenu()
     {
         SceneManager.LoadScene("Menu");

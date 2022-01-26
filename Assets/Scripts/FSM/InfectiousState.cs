@@ -15,12 +15,14 @@ public class InfectiousState : FSMState
 
     public override void Act(GameObject npc)
     {
-
+        npc.GetComponent<Renderer>().material.color = Color.red;
+        npc.name = "I";
+        npc.GetComponent<NPC>().RandomMove();
     }
 
     public override void Reason(GameObject npc)
     {
-        if (true)
+        if (false)
         {
             fsm.PerformTransition(Transition.EndQuarantine);
         }

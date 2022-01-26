@@ -6,11 +6,11 @@ public class NPC : MonoBehaviour {
     public GameObject plane;
   
     private NavMeshAgent agent;
-    private FSMSystem fsm;
+    public FSMSystem fsm;
     private Vector3 destination;
     private float initSpeed;
     // Use this for initialization
-    void Start () {
+    void Awake() {
         agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
         initSpeed = agent.speed;
         destination = GenerateRandomPosition(plane.transform.localScale.x, plane.transform.localScale.z) + plane.transform.position;
@@ -65,21 +65,23 @@ public class NPC : MonoBehaviour {
     private void OnTriggerEnter(Collider collider)
     {
 
-        if (collider.tag == "NPC" && NPCSpawn.day > 0) 
+        if (collider.tag == "NPC" && ValueManager.Instance.day > 0) 
         {
-            if (infectState == 2)
+            if (fsm.currentStateID == StateID.Infectious)
             {//如果是传染源
                 float rand = Random.Range(0, 1000);
-                if (rand / 1000 < NPCSpawn.staticIinfecRate)
+                if (rand / 1000 < ValueManager.Instance.IinfectRate)
                     collider.gameObject.SendMessage("inf");
             }
-            if (infectState == 1)
+            if (fsm.currentStateID == StateID.Infectious)
             {//如果是传染源
                 float rand = Random.Range(0, 1000);
-                if (rand / 1000 < NPCSpawn.staticEinfectRate)
+                if (rand / 1000 < ValueManager.Instance.EinfectRate)
                     collider.gameObject.SendMessage("inf");
             }
 
         }
     }
+
+
 }

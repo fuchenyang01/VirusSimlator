@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu.unity
     guid: e8d2ef0f1b36992488b3de679fe033fd
   - enabled: 1
-    path: Assets/Scenes/Level1.unity
+    path: Assets/Scenes/OutDoor.unity
+    guid: 1baed00cca8c00a4da6b06b143a6be99
+  - enabled: 1
+    path: Assets/Scenes/InDoor.unity
     guid: 726d605de2ddb744c970856aad03a147
   m_configObjects: {}
