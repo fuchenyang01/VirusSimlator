@@ -307,6 +307,17 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &529545775 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1259590996251689244, guid: 8921223ae9a6f5f459353ef4a2dae161, type: 3}
+  m_PrefabInstance: {fileID: 1761075358}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &613712976
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -617,6 +628,11 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!1 &1514201479 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7990104132036958442, guid: 446139a31ac165547a447b46d633a534, type: 3}
+  m_PrefabInstance: {fileID: 613712976}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &1575171200 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7990104131658343719, guid: 446139a31ac165547a447b46d633a534, type: 3}
@@ -737,6 +753,7 @@ GameObject:
   - component: {fileID: 1865851275}
   - component: {fileID: 1865851274}
   - component: {fileID: 1865851277}
+  - component: {fileID: 1865851278}
   m_Layer: 0
   m_Name: Plane
   m_TagString: Untagged
@@ -834,6 +851,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NPC: {fileID: 1273561550}
+--- !u!114 &1865851278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865851272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2402b3cd047e6504a9d7415f9f9e7917, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SmartChart: {fileID: 1514201479}
+  r0: {fileID: 529545775}
 --- !u!1 &1896903451
 GameObject:
   m_ObjectHideFlags: 0

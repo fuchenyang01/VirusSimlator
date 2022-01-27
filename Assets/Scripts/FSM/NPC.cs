@@ -32,6 +32,7 @@ public class NPC : MonoBehaviour {
         infectiousState.AddTransition(Transition.EndQuarantine, StateID.Recovered);
 
         FSMState recoveredState = new RecoveredState(fsm);
+        recoveredState.AddTransition(Transition.AntibodyDisappears, StateID.Susceptible);
 
         fsm.AddState(susceptibleState);
         fsm.AddState(exposedState);

@@ -18,7 +18,6 @@ public class MenuWnd : WindowRoot
     public void OnStartBtnClick()
     {
         levelManager.NextScence();
-        valueManager.StartTimer();
     }
     public void OnExitBtnClick()
     {

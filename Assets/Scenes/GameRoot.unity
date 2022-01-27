@@ -441,10 +441,10 @@ MonoBehaviour:
   secForDay: 1
   EinfectRate: 0
   IinfectRate: 0
-  initSNum: 100
-  initENum: 1
-  initINum: 1
-  initRNum: 1
+  SNum: 100
+  ENum: 1
+  INum: 1
+  RNum: 1
   EDay: 1
   IDay: 1
   RDay: -1

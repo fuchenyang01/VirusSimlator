@@ -20,6 +20,12 @@ public class RecoveredState : FSMState
     }
 
     public override void Reason(GameObject npc)
-    {
+    {                    
+        if (false)
+        {
+            ValueManager.Instance.RNum--;
+            ValueManager.Instance.SNum++;
+            fsm.PerformTransition(Transition.AntibodyDisappears);
+        }
     }
 }

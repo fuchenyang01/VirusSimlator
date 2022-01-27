@@ -24,6 +24,8 @@ public class InfectiousState : FSMState
     {
         if (false)
         {
+            ValueManager.Instance.INum--;
+            ValueManager.Instance.RNum++;
             fsm.PerformTransition(Transition.EndQuarantine);
         }
     }

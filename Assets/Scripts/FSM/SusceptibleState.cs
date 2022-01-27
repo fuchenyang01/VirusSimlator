@@ -25,6 +25,8 @@ public class SusceptibleState : FSMState
         //接触患者
         if (false)
         {
+            ValueManager.Instance.SNum--;
+            ValueManager.Instance.ENum++;
             fsm.PerformTransition(Transition.TouchPatients);
         }      
     }

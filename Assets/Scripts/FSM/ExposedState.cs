@@ -24,6 +24,8 @@ public class ExposedState : FSMState
     {
         if (false)
         {
+            ValueManager.Instance.ENum--;
+            ValueManager.Instance.INum++;
             fsm.PerformTransition(Transition.PassIncubation);
         }
     }
