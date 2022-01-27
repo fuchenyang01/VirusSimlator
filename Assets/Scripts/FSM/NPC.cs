@@ -9,8 +9,21 @@ public class NPC : MonoBehaviour {
     public FSMSystem fsm;
     private Vector3 destination;
     private float initSpeed;
+    private bool isTouchPatients;
+    private float rDay;
+    private float eDay;
+    private float iDay;
+
+    public bool IsTouchPatients { get => isTouchPatients; set => isTouchPatients = value; }
+    public float EDay { get => eDay; set => eDay = value; }
+    public float IDay { get => iDay; set => iDay = value; }
+    public float RDay { get => rDay; set => rDay = value; }
+
     // Use this for initialization
     void Awake() {
+        rDay = ValueManager.Instance.RDay;
+        eDay = ValueManager.Instance.EDay;
+        iDay = ValueManager.Instance.IDay;
         agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
         initSpeed = agent.speed;
         destination = GenerateRandomPosition(plane.transform.localScale.x, plane.transform.localScale.z) + plane.transform.position;
@@ -62,27 +75,27 @@ public class NPC : MonoBehaviour {
 
         return new Vector3(x, 0, z);
     }
-
+    void inf()
+    {
+        isTouchPatients = true;
+    }
     private void OnTriggerEnter(Collider collider)
     {
 
         if (collider.tag == "NPC" && ValueManager.Instance.day > 0) 
         {
             if (fsm.currentStateID == StateID.Infectious)
-            {//如果是传染源
+            {
                 float rand = Random.Range(0, 1000);
                 if (rand / 1000 < ValueManager.Instance.IinfectRate)
                     collider.gameObject.SendMessage("inf");
             }
-            if (fsm.currentStateID == StateID.Infectious)
-            {//如果是传染源
+            if (fsm.currentStateID == StateID.Exposed)
+            {
                 float rand = Random.Range(0, 1000);
                 if (rand / 1000 < ValueManager.Instance.EinfectRate)
                     collider.gameObject.SendMessage("inf");
             }
-
         }
     }
-
-
 }

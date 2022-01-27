@@ -13,7 +13,7 @@ public class DrawGraph : MonoBehaviour
     public Text r0;
     void Start()
     {
-        InvokeRepeating("UpdateSmartChart", 3, 1);
+        InvokeRepeating("UpdateSmartChart", 0, 1);
         sc = SmartChart.GetComponent<SmartChart>();
         chartDataListS = new List<Vector2>();
         chartDataListE = new List<Vector2>();
@@ -26,15 +26,15 @@ public class DrawGraph : MonoBehaviour
     {
 
         sc.minXValue = 0;
-        sc.maxXValue = ValueManager.Instance.day;
+        sc.maxXValue = ValueManager.Instance.day + 4;
         sc.minYValue = 0;
         sc.maxYValue = ValueManager.Instance.INum + ValueManager.Instance.ENum + ValueManager.Instance.SNum + ValueManager.Instance.RNum;
 
 
-        chartDataListS.Add(new Vector2(ValueManager.Instance.day, ValueManager.Instance.SNum));
+        chartDataListS.Add(new Vector2(ValueManager.Instance.day + 4, ValueManager.Instance.SNum));
         sc.chartData[0].data = chartDataListS.ToArray();
 
-        chartDataListE.Add(new Vector2(ValueManager.Instance.day, ValueManager.Instance.ENum));
+        chartDataListE.Add(new Vector2(ValueManager.Instance.day + 4, ValueManager.Instance.ENum));
         sc.chartData[1].data = chartDataListE.ToArray();
 
         if (chartDataListE.Count > 1)
@@ -48,10 +48,10 @@ public class DrawGraph : MonoBehaviour
 
 
 
-        chartDataListI.Add(new Vector2(ValueManager.Instance.day, ValueManager.Instance.INum));
+        chartDataListI.Add(new Vector2(ValueManager.Instance.day + 4, ValueManager.Instance.INum));
         sc.chartData[2].data = chartDataListI.ToArray();
 
-        chartDataListR.Add(new Vector2(ValueManager.Instance.day, ValueManager.Instance.RNum));
+        chartDataListR.Add(new Vector2(ValueManager.Instance.day + 4, ValueManager.Instance.RNum));
         sc.chartData[3].data = chartDataListR.ToArray();
         sc.SetupValues(true);
         sc.UpdateChart();

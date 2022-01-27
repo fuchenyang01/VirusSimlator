@@ -22,12 +22,17 @@ public class InfectiousState : FSMState
 
     public override void Reason(GameObject npc)
     {
-        if (false)
+        if (npc.GetComponent<NPC>().IDay != -1)
         {
-            ValueManager.Instance.INum--;
-            ValueManager.Instance.RNum++;
-            fsm.PerformTransition(Transition.EndQuarantine);
+            npc.GetComponent<NPC>().IDay -= Time.deltaTime;
+            if (npc.GetComponent<NPC>().IDay <= 0)
+            {
+                ValueManager.Instance.INum--;
+                ValueManager.Instance.RNum++;
+                fsm.PerformTransition(Transition.EndQuarantine);
+            }
         }
+      
     }
 }
 

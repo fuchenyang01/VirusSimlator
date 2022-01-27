@@ -20,12 +20,16 @@ public class RecoveredState : FSMState
     }
 
     public override void Reason(GameObject npc)
-    {                    
-        if (false)
+    {
+        if (npc.GetComponent<NPC>().RDay != -1)
         {
-            ValueManager.Instance.RNum--;
-            ValueManager.Instance.SNum++;
-            fsm.PerformTransition(Transition.AntibodyDisappears);
+            npc.GetComponent<NPC>().RDay -= Time.deltaTime;
+            if (npc.GetComponent<NPC>().RDay <= 0)
+            {
+                ValueManager.Instance.RNum--;
+                ValueManager.Instance.SNum++;
+                fsm.PerformTransition(Transition.AntibodyDisappears);
+            }
         }
     }
 }

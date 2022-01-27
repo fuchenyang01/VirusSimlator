@@ -439,14 +439,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   day: -3
   secForDay: 1
-  EinfectRate: 0
-  IinfectRate: 0
-  SNum: 100
+  EinfectRate: 1
+  IinfectRate: 1
+  SNum: 300
   ENum: 1
-  INum: 1
-  RNum: 1
-  EDay: 1
-  IDay: 1
+  INum: 0
+  RNum: 0
+  EDay: 7
+  IDay: 14
   RDay: -1
 --- !u!1 &705507993
 GameObject:

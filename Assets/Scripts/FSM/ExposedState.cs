@@ -22,11 +22,15 @@ public class ExposedState : FSMState
 
     public override void Reason(GameObject npc)
     {
-        if (false)
+        if (npc.GetComponent<NPC>().EDay != -1)
         {
-            ValueManager.Instance.ENum--;
-            ValueManager.Instance.INum++;
-            fsm.PerformTransition(Transition.PassIncubation);
-        }
+            npc.GetComponent<NPC>().EDay -= Time.deltaTime;
+            if (npc.GetComponent<NPC>().EDay <= 0)
+            {
+                ValueManager.Instance.ENum--;
+                ValueManager.Instance.INum++;
+                fsm.PerformTransition(Transition.PassIncubation);
+            }
+        } 
     }
 }

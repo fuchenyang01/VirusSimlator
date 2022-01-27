@@ -23,7 +23,7 @@ public class SusceptibleState : FSMState
     public override void Reason(GameObject npc)
     {
         //接触患者
-        if (false)
+        if (npc.GetComponent<NPC>().IsTouchPatients)
         {
             ValueManager.Instance.SNum--;
             ValueManager.Instance.ENum++;
