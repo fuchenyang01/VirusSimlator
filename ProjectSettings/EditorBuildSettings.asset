@@ -13,8 +13,11 @@ EditorBuildSettings:
     guid: e8d2ef0f1b36992488b3de679fe033fd
   - enabled: 1
     path: Assets/Scenes/OutDoor.unity
-    guid: 1baed00cca8c00a4da6b06b143a6be99
+    guid: 2252f95cd7ca4204f9566609683a4a4e
   - enabled: 1
     path: Assets/Scenes/InDoor.unity
-    guid: 726d605de2ddb744c970856aad03a147
+    guid: 1baed00cca8c00a4da6b06b143a6be99
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   m_configObjects: {}

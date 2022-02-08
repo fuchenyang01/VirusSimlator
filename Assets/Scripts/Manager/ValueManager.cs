@@ -11,6 +11,7 @@ public class ValueManager : MonoBehaviour
     public float IinfectRate;
     public int SNum = 100, ENum = 0, INum = 0, RNum = 0;//SEIR初始数量'
     public float EDay = 1, IDay = 1, RDay = -1;//E潜伏期 I发病期 R是免疫保持期-1不生效
+    public bool bIsolatezone = false; //是否有隔离区
 
     private UIManager uiManager = null;
     public void Init()
