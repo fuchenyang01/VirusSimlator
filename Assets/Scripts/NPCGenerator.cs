@@ -14,7 +14,7 @@ public class NPCGenerator : MonoBehaviour
 
         for (int i = 0; i < ValueManager.Instance.SNum; i++)
         {
-            GameObject SNPC = Instantiate(NPC, this.transform.position, this.transform.rotation);
+            GameObject SNPC = Instantiate(NPC, NPC.transform.position, this.transform.rotation);
             SNPC.transform.parent = this.transform;
             SNPC.name = "S";
             SNPC.GetComponent<NPC>().fsm.SetState(StateID.Susceptible);
@@ -22,7 +22,7 @@ public class NPCGenerator : MonoBehaviour
 
         for (int i = 0; i < ValueManager.Instance.ENum; i++)
         {
-            GameObject ENPC = Instantiate(NPC, this.transform.position, this.transform.rotation);
+            GameObject ENPC = Instantiate(NPC, NPC.transform.position, this.transform.rotation);
             ENPC.transform.parent = this.transform;
             ENPC.name = "E";
             ENPC.GetComponent<NPC>().fsm.SetState(StateID.Exposed);
@@ -30,7 +30,7 @@ public class NPCGenerator : MonoBehaviour
 
         for (int i = 0; i < ValueManager.Instance.INum; i++)
         {
-            GameObject INPC = Instantiate(NPC, this.transform.position, this.transform.rotation);
+            GameObject INPC = Instantiate(NPC, NPC.transform.position, this.transform.rotation);
             INPC.transform.parent = this.transform;
             INPC.name = "I";
             INPC.GetComponent<NPC>().fsm.SetState(StateID.Infectious);
@@ -38,7 +38,7 @@ public class NPCGenerator : MonoBehaviour
 
         for (int i = 0; i < ValueManager.Instance.RNum; i++)
         {
-            GameObject RNPC = Instantiate(NPC, this.transform.position, this.transform.rotation);
+            GameObject RNPC = Instantiate(NPC, NPC.transform.position, this.transform.rotation);
             RNPC.transform.parent = this.transform;
             RNPC.name = "R";
             RNPC.GetComponent<NPC>().fsm.SetState(StateID.Recovered);

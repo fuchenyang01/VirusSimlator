@@ -319,8 +319,6 @@ GameObject:
   - component: {fileID: 299327663}
   - component: {fileID: 299327662}
   - component: {fileID: 299327661}
-  - component: {fileID: 299327660}
-  - component: {fileID: 299327659}
   m_Layer: 0
   m_Name: Isolatezone
   m_TagString: Untagged
@@ -342,33 +340,6 @@ Transform:
   m_Father: {fileID: 726834429}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &299327659
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 299327657}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2402b3cd047e6504a9d7415f9f9e7917, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SmartChart: {fileID: 1514201479}
-  r0: {fileID: 529545775}
---- !u!114 &299327660
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 299327657}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c984640f6b81c6141a4da1f56e110c84, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  NPC: {fileID: 1273561550}
 --- !u!64 &299327661
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -734,6 +705,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   plane: {fileID: 1865851272}
+  isolateZone: {fileID: 299327657}
 --- !u!195 &1273561556
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -789,8 +761,6 @@ GameObject:
   - component: {fileID: 1575080998}
   - component: {fileID: 1575080997}
   - component: {fileID: 1575080996}
-  - component: {fileID: 1575080995}
-  - component: {fileID: 1575080994}
   m_Layer: 0
   m_Name: Plane (2)
   m_TagString: Untagged
@@ -812,33 +782,6 @@ Transform:
   m_Father: {fileID: 726834429}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1575080994
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1575080992}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2402b3cd047e6504a9d7415f9f9e7917, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SmartChart: {fileID: 1514201479}
-  r0: {fileID: 529545775}
---- !u!114 &1575080995
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1575080992}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c984640f6b81c6141a4da1f56e110c84, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  NPC: {fileID: 1273561550}
 --- !u!64 &1575080996
 MeshCollider:
   m_ObjectHideFlags: 0

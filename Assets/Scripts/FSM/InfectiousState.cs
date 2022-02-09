@@ -17,7 +17,14 @@ public class InfectiousState : FSMState
     {
         npc.GetComponent<Renderer>().material.color = Color.red;
         npc.name = "I";
-        npc.GetComponent<NPC>().RandomMove();
+        if (ValueManager.Instance.bIsolatezone)
+        {
+            npc.GetComponent<NPC>().GoToIsolateZone();
+        }
+        else
+        {
+            npc.GetComponent<NPC>().RandomMove();
+        }      
     }
 
     public override void Reason(GameObject npc)
@@ -29,10 +36,10 @@ public class InfectiousState : FSMState
             {
                 ValueManager.Instance.INum--;
                 ValueManager.Instance.RNum++;
-                fsm.PerformTransition(Transition.EndQuarantine);
+                npc.GetComponent<NPC>().LeaveIsolateZone();
+                fsm.PerformTransition(Transition.Recovery);
             }
-        }
-      
+        }      
     }
 }
 

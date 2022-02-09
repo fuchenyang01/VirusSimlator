@@ -475,8 +475,6 @@ GameObject:
   - component: {fileID: 711958141}
   - component: {fileID: 711958140}
   - component: {fileID: 711958139}
-  - component: {fileID: 711958138}
-  - component: {fileID: 711958137}
   m_Layer: 0
   m_Name: Isolatezone
   m_TagString: Untagged
@@ -498,33 +496,6 @@ Transform:
   m_Father: {fileID: 726834429}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &711958137
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 711958135}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2402b3cd047e6504a9d7415f9f9e7917, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SmartChart: {fileID: 1514201479}
-  r0: {fileID: 529545775}
---- !u!114 &711958138
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 711958135}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c984640f6b81c6141a4da1f56e110c84, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  NPC: {fileID: 1273561550}
 --- !u!64 &711958139
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -734,6 +705,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   plane: {fileID: 1865851272}
+  isolateZone: {fileID: 711958135}
 --- !u!195 &1273561556
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -784,15 +756,13 @@ GameObject:
   - component: {fileID: 1382135716}
   - component: {fileID: 1382135715}
   - component: {fileID: 1382135714}
-  - component: {fileID: 1382135713}
-  - component: {fileID: 1382135712}
   m_Layer: 0
   m_Name: Plane (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1382135711
 Transform:
   m_ObjectHideFlags: 0
@@ -807,33 +777,6 @@ Transform:
   m_Father: {fileID: 726834429}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1382135712
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1382135710}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2402b3cd047e6504a9d7415f9f9e7917, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SmartChart: {fileID: 1514201479}
-  r0: {fileID: 529545775}
---- !u!114 &1382135713
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1382135710}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c984640f6b81c6141a4da1f56e110c84, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  NPC: {fileID: 1273561550}
 --- !u!64 &1382135714
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -855,7 +798,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1382135710}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1

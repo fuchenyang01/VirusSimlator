@@ -12,8 +12,14 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu.unity
     guid: e8d2ef0f1b36992488b3de679fe033fd
   - enabled: 1
+    path: Assets/Scenes/InDoorIsolatezone.unity
+    guid: b95ff3eaef9706e40a76259c6c3aa612
+  - enabled: 1
     path: Assets/Scenes/OutDoor.unity
     guid: 2252f95cd7ca4204f9566609683a4a4e
+  - enabled: 1
+    path: Assets/Scenes/OutDoorIsolatezone.unity
+    guid: b4224bedf6a708247b08cd7327683f78
   - enabled: 1
     path: Assets/Scenes/InDoor.unity
     guid: 1baed00cca8c00a4da6b06b143a6be99

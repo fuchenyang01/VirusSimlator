@@ -13,7 +13,7 @@ public class NPC : MonoBehaviour {
     private float rDay;
     private float eDay;
     private float iDay;
-
+    public GameObject isolateZone;
     public bool IsTouchPatients { get => isTouchPatients; set => isTouchPatients = value; }
     public float EDay { get => eDay; set => eDay = value; }
     public float IDay { get => iDay; set => iDay = value; }
@@ -42,7 +42,7 @@ public class NPC : MonoBehaviour {
         exposedState.AddTransition(Transition.PassIncubation, StateID.Infectious);
 
         FSMState infectiousState = new InfectiousState(fsm);
-        infectiousState.AddTransition(Transition.EndQuarantine, StateID.Recovered);
+        infectiousState.AddTransition(Transition.Recovery, StateID.Recovered);
 
         FSMState recoveredState = new RecoveredState(fsm);
         recoveredState.AddTransition(Transition.AntibodyDisappears, StateID.Susceptible);
@@ -67,6 +67,18 @@ public class NPC : MonoBehaviour {
             agent.SetDestination(destination);
 
         }
+    }
+    public void LeaveIsolateZone()
+    {
+        agent.speed = 15;
+        destination = GenerateRandomPosition(plane.transform.localScale.x, plane.transform.localScale.z) + plane.transform.position;
+        agent.SetDestination(destination);
+    }
+    public void GoToIsolateZone()
+    {
+        agent.speed = 15;
+        destination = isolateZone.transform.position;
+        agent.SetDestination(destination);
     }
     Vector3 GenerateRandomPosition(float xScale, float zScale)
     {

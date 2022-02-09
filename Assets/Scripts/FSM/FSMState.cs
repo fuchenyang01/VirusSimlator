@@ -7,7 +7,7 @@ public enum Transition
     NullTransition=0,
     TouchPatients,        //接触患者
     PassIncubation,       //度过潜伏期
-    EndQuarantine,        //结束隔离
+    Recovery,             //康复
     AntibodyDisappears    //抗体消失
 }
 public enum StateID
