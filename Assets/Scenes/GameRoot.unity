@@ -193,7 +193,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u75C5\u6BD2\u7C7B\u578B"
+  m_Text: Virus Type
 --- !u!222 &99475588
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -490,7 +490,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u9694\u79BB\u533A"
+  m_Text: Isolatezone
 --- !u!222 &313787339
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -569,7 +569,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u9632\u62A4\u63AA\u65BD"
+  m_Text: Protective
 --- !u!222 &380390893
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -709,7 +709,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u73AF\u5883"
+  m_Text: Environment
 --- !u!222 &401181358
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1014,7 +1014,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u6709\u9694\u79BB\u533A"
+  m_Text: Yes
 --- !u!222 &572812061
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1282,14 +1282,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   day: -3
   secForDay: 1
-  EinfectRate: 0.3
-  IinfectRate: 0.1
+  EinfectRate: 0.5
+  IinfectRate: 0.5
+  SInitNum: 300
+  EInitNum: 1
+  IInitNum: 0
+  RInitNum: 0
   SNum: 300
   ENum: 1
   INum: 0
   RNum: 0
-  EDay: 5
-  IDay: 4
+  EDay: 4
+  IDay: 14
   RDay: -1
   bIsolatezone: 1
   environmentType: 1
@@ -1458,7 +1462,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u5BA4\u5185"
+  m_Text: In Door
 --- !u!222 &720766380
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1478,7 +1482,7 @@ GameObject:
   - component: {fileID: 724536440}
   - component: {fileID: 724536441}
   m_Layer: 0
-  m_Name: Toggle (2)
+  m_Name: Yes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1564,7 +1568,7 @@ GameObject:
   - component: {fileID: 792451773}
   - component: {fileID: 792451774}
   m_Layer: 0
-  m_Name: Toggle
+  m_Name: InDoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1709,7 +1713,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u666E\u901A\u75C5\u6BD2"
+  m_Text: Normal
 --- !u!222 &875129992
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1867,7 +1871,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u5BA4\u5916"
+  m_Text: Out Door
 --- !u!222 &919171587
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1946,7 +1950,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u6234\u53E3\u7F69"
+  m_Text: Mask
 --- !u!222 &930582451
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2025,7 +2029,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Omicor\u75C5\u6BD2"
+  m_Text: Omicor
 --- !u!222 &956861527
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2283,7 +2287,7 @@ GameObject:
   - component: {fileID: 1049002474}
   - component: {fileID: 1049002475}
   m_Layer: 0
-  m_Name: bIsolatezone
+  m_Name: Protective
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2420,7 +2424,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u65E0"
+  m_Text: None
 --- !u!222 &1081992081
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2573,7 +2577,7 @@ GameObject:
   - component: {fileID: 1129370219}
   - component: {fileID: 1129370220}
   m_Layer: 0
-  m_Name: Toggle
+  m_Name: Mask
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2660,7 +2664,7 @@ GameObject:
   - component: {fileID: 1154807123}
   - component: {fileID: 1154807124}
   m_Layer: 0
-  m_Name: Protective
+  m_Name: bIsolatezone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3021,7 +3025,7 @@ GameObject:
   - component: {fileID: 1279835588}
   - component: {fileID: 1279835589}
   m_Layer: 0
-  m_Name: Toggle (1)
+  m_Name: Normal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3820,6 +3824,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73caee5b8ab111c4d82ccc1db94143af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  EnvironmentType: {fileID: 957559894}
+  VirusType: {fileID: 599704665}
+  Isolatezone: {fileID: 1154807123}
+  Protective: {fileID: 1049002474}
 --- !u!1 &1723791732
 GameObject:
   m_ObjectHideFlags: 0
@@ -3831,7 +3839,7 @@ GameObject:
   - component: {fileID: 1723791733}
   - component: {fileID: 1723791734}
   m_Layer: 0
-  m_Name: Toggle (1)
+  m_Name: None
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3993,7 +4001,7 @@ GameObject:
   - component: {fileID: 1840834836}
   - component: {fileID: 1840834837}
   m_Layer: 0
-  m_Name: Toggle (3)
+  m_Name: No
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4079,7 +4087,7 @@ GameObject:
   - component: {fileID: 1934560248}
   - component: {fileID: 1934560249}
   m_Layer: 0
-  m_Name: Toggle
+  m_Name: Omicor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4240,7 +4248,7 @@ GameObject:
   - component: {fileID: 1992569541}
   - component: {fileID: 1992569542}
   m_Layer: 0
-  m_Name: Toggle (1)
+  m_Name: OutDoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4537,7 +4545,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u65E0\u9694\u79BB\u533A"
+  m_Text: No
 --- !u!222 &2110091782
 CanvasRenderer:
   m_ObjectHideFlags: 0

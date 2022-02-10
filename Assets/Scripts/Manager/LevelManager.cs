@@ -31,6 +31,7 @@ public class LevelManager : MonoBehaviour
     }
     public void LoadMenu()
     {
+        ValueManager.Instance.SetVirusData();
         SceneManager.LoadScene("Menu");
         uiManager.menuWnd.SetWindSate(true);
     }
