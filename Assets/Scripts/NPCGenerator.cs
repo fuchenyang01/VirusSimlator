@@ -18,6 +18,10 @@ public class NPCGenerator : MonoBehaviour
             SNPC.transform.parent = this.transform;
             SNPC.name = "S";
             SNPC.GetComponent<NPC>().fsm.SetState(StateID.Susceptible);
+            if (ValueManager.Instance.environmentType==ValueManager.EnvironmentType.Custom)
+            {
+                SNPC.transform.localScale/=ValueManager.Instance.planeSize;
+            }
         }
 
         for (int i = 0; i < ValueManager.Instance.ENum; i++)
@@ -26,6 +30,10 @@ public class NPCGenerator : MonoBehaviour
             ENPC.transform.parent = this.transform;
             ENPC.name = "E";
             ENPC.GetComponent<NPC>().fsm.SetState(StateID.Exposed);
+            if (ValueManager.Instance.environmentType==ValueManager.EnvironmentType.Custom)
+            {
+                ENPC.transform.localScale/=ValueManager.Instance.planeSize;
+            }
         }
 
         for (int i = 0; i < ValueManager.Instance.INum; i++)
@@ -34,6 +42,10 @@ public class NPCGenerator : MonoBehaviour
             INPC.transform.parent = this.transform;
             INPC.name = "I";
             INPC.GetComponent<NPC>().fsm.SetState(StateID.Infectious);
+            if (ValueManager.Instance.environmentType==ValueManager.EnvironmentType.Custom)
+            {
+                INPC.transform.localScale/=ValueManager.Instance.planeSize;
+            }
         }
 
         for (int i = 0; i < ValueManager.Instance.RNum; i++)
@@ -42,8 +54,13 @@ public class NPCGenerator : MonoBehaviour
             RNPC.transform.parent = this.transform;
             RNPC.name = "R";
             RNPC.GetComponent<NPC>().fsm.SetState(StateID.Recovered);
+            if (ValueManager.Instance.environmentType==ValueManager.EnvironmentType.Custom)
+            {
+                RNPC.transform.localScale/=ValueManager.Instance.planeSize;
+            }
         }
 
+        NPC.SetActive(false);
     }
 
     private void Update()

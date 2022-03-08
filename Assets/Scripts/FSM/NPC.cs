@@ -25,7 +25,7 @@ public class NPC : MonoBehaviour {
         eDay = ValueManager.Instance.EDay;
         iDay = ValueManager.Instance.IDay;
         agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
-        initSpeed = agent.speed;
+        initSpeed =  ValueManager.Instance.speed;
         destination = GenerateRandomPosition(plane.transform.localScale.x, plane.transform.localScale.z) + plane.transform.position;
         agent.SetDestination(destination);
         InitFSM();
@@ -70,13 +70,13 @@ public class NPC : MonoBehaviour {
     }
     public void LeaveIsolateZone()
     {
-        agent.speed = 15;
+        agent.speed = ValueManager.Instance.runSpeed;
         destination = GenerateRandomPosition(plane.transform.localScale.x, plane.transform.localScale.z) + plane.transform.position;
         agent.SetDestination(destination);
     }
     public void GoToIsolateZone()
     {
-        agent.speed = 15;
+        agent.speed = ValueManager.Instance.runSpeed;
         destination = isolateZone.transform.position;
         agent.SetDestination(destination);
     }

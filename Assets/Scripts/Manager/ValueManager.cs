@@ -8,7 +8,8 @@ public class ValueManager : MonoBehaviour
     public enum EnvironmentType
     {
         Outdoor,
-        InDoor
+        InDoor,
+        Custom
     }
 
     public enum VirusType
@@ -27,7 +28,11 @@ public class ValueManager : MonoBehaviour
     public float secForDay = 1;
     public float EinfectRate;
     public float IinfectRate;
+    public float planeSize = 0;
+    public float speed = 3.5f;
+    public float runSpeed = 15.0f;
     public int SInitNum = 100, EInitNum = 0, IInitNum = 0, RInitNum = 0;//SEIR初始数量'
+    public int SimulationDays = 0;
     [HideInInspector]
     public int SNum, ENum, INum, RNum;//SEIR初始数量'
     public float EDay = 1, IDay = 1, RDay = -1;//E潜伏期 I发病期 R是免疫保持期-1不生效

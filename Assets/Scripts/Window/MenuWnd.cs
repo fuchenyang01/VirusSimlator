@@ -8,6 +8,11 @@ public class MenuWnd : WindowRoot
     public ToggleGroup VirusType;
     public ToggleGroup Isolatezone;
     public ToggleGroup Protective;
+    public InputField InputField;
+    public InputField SNum;
+    public InputField ENum;
+    public InputField INum;
+    public InputField RNum;
     protected override void InitWnd()
     {
         base.InitWnd();
@@ -32,6 +37,19 @@ public class MenuWnd : WindowRoot
                         break;
                     case "OutDoor":
                         valueManager.environmentType = ValueManager.EnvironmentType.Outdoor;
+                        break;
+                    case "Custom":
+                        valueManager.environmentType = ValueManager.EnvironmentType.Custom;
+                        if (InputField.text!=null&&InputField.text!="")
+                        {
+                            valueManager.planeSize = float.Parse(InputField.text);
+                        }
+                        else
+                        {
+                            valueManager.planeSize = 1;
+                        }
+                        valueManager.speed/=valueManager.planeSize;
+                        valueManager.runSpeed/=valueManager.planeSize;
                         break;
                 }
                 break;
@@ -91,8 +109,10 @@ public class MenuWnd : WindowRoot
                 break;
             }
         }
-
-
+        valueManager.SInitNum = int.Parse(SNum.text);
+        valueManager.EInitNum = int.Parse(ENum.text);
+        valueManager.IInitNum = int.Parse(INum.text);
+        valueManager.RInitNum = int.Parse(RNum.text);
         valueManager.SetVirusData();
 
         if (valueManager.environmentType == ValueManager.EnvironmentType.InDoor)
@@ -106,7 +126,7 @@ public class MenuWnd : WindowRoot
                 levelManager.LoadScene("InDoor");
             }
         }
-        else
+        else if(valueManager.environmentType == ValueManager.EnvironmentType.Outdoor)
         {
             if (valueManager.bIsolatezone)
             {
@@ -117,7 +137,17 @@ public class MenuWnd : WindowRoot
                 levelManager.LoadScene("OutDoor");
             }
         }
-
+        else if (valueManager.environmentType == ValueManager.EnvironmentType.Custom)
+        {
+            if (valueManager.bIsolatezone)
+            {
+                levelManager.LoadScene("CustomIsolatezone");
+            }
+            else
+            {
+                levelManager.LoadScene("Custom");
+            }
+        }
     }
     public void OnExitBtnClick()
     {
