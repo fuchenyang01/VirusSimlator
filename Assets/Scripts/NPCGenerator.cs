@@ -69,7 +69,36 @@ public class NPCGenerator : MonoBehaviour
         if (timer <= 0)
         {
             ValueManager.Instance.day++;
+            if (ValueManager.Instance.day == UIManager.Instance.endWnd.checkDay)
+            {
+                float infectionRate = (float)((float)ValueManager.Instance.INum + (float)ValueManager.Instance.RNum)/(float)((float)ValueManager.Instance.SNum + (float)ValueManager.Instance.ENum + (float)ValueManager.Instance.INum + (float)ValueManager.Instance.RNum);
+                if (infectionRate > 0.6f)
+                {
+                    UIManager.Instance.endWnd.isWin=false;
+                }
+                else
+                {
+                    UIManager.Instance.endWnd.isWin=true;
+                }
+            }
+
+            if (ValueManager.Instance.SimulationDays>0)
+            {
+                if (ValueManager.Instance.day >= ValueManager.Instance.SimulationDays)
+                {
+                    //End Simulation
+                    UIManager.Instance.endWnd.SetWindSate(true);
+                }
+            }
             timer = ValueManager.Instance.secForDay;
+
+            if (ValueManager.Instance.ENum==0&&ValueManager.Instance.INum==0)
+            {
+                //End Simulation
+                UIManager.Instance.endWnd.SetWindSate(true);
+            }
+
+           
         }
     }
 }

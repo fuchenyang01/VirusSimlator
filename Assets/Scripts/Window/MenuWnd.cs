@@ -13,6 +13,7 @@ public class MenuWnd : WindowRoot
     public InputField ENum;
     public InputField INum;
     public InputField RNum;
+    public InputField SimulationDays;
     protected override void InitWnd()
     {
         base.InitWnd();
@@ -113,6 +114,10 @@ public class MenuWnd : WindowRoot
         valueManager.EInitNum = int.Parse(ENum.text);
         valueManager.IInitNum = int.Parse(INum.text);
         valueManager.RInitNum = int.Parse(RNum.text);
+        if (SimulationDays.text!=null)
+        {
+            valueManager.SimulationDays = int.Parse(SimulationDays.text);
+        }
         valueManager.SetVirusData();
 
         if (valueManager.environmentType == ValueManager.EnvironmentType.InDoor)

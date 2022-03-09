@@ -5,6 +5,7 @@ public class UIManager : MonoBehaviour
 {
     public MenuWnd menuWnd;
     public GameWnd gameWnd;
+    public EndWnd endWnd;
     public static UIManager Instance = null;
     private LevelManager levelManager = null;
 
