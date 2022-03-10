@@ -29,8 +29,13 @@ public class ValueManager : MonoBehaviour
     public float EinfectRate;
     public float IinfectRate;
     public float planeSize = 0;
-    public float speed = 3.5f;
-    public float runSpeed = 15.0f;
+    public float initSpeed = 3.5f;
+    public float initRunSpeed = 15.0f;
+
+    [HideInInspector]
+    public float speed;
+    [HideInInspector]
+    public float runSpeed;
     public int SInitNum = 100, EInitNum = 0, IInitNum = 0, RInitNum = 0;//SEIR初始数量'
     public int SimulationDays = 0;
     [HideInInspector]
@@ -48,6 +53,8 @@ public class ValueManager : MonoBehaviour
         ENum = EInitNum;
         INum = IInitNum;
         RNum = RInitNum;
+        speed = initSpeed;
+        runSpeed = initRunSpeed;
         Debug.Log("Init ValueManager...");
     }
     public void SetVirusData()

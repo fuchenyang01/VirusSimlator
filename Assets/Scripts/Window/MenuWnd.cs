@@ -49,8 +49,8 @@ public class MenuWnd : WindowRoot
                         {
                             valueManager.planeSize = 1;
                         }
-                        valueManager.speed/=valueManager.planeSize;
-                        valueManager.runSpeed/=valueManager.planeSize;
+                        valueManager.speed = valueManager.initSpeed / valueManager.planeSize;
+                        valueManager.runSpeed = valueManager.initRunSpeed /valueManager.planeSize;
                         break;
                 }
                 break;

@@ -1435,7 +1435,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 469e6e810d0a4e848a92726073cfdf5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  checkDay: 10
+  checkDay: 15
   menuBtn: {fileID: 1150063793}
   isWin: 0
   hitPanel: {fileID: 6305610149245490876}
